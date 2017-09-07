@@ -3,7 +3,9 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:show, :udpate, :destroy]
   
   def index
+    @character = @game.characters
     render json: @game.characters
+   
   end
 
   def show

@@ -38,21 +38,7 @@ $(document).ready( function() {
     }
   }
 
-  $(document).on('click', '#edit-game', function() {
-    editingGame = $(this).siblings('.game-item').data().id;     
-    toggle();
-  });
-
-  $(document).on('click', '#delete-game', function() {
-    var id = $(this).siblings('.game-item').data().id
-    $.ajax({
-      url: '/games/' + id,
-      type: 'DELETE'
-    }).done( function() {
-      var row = $("[data-id='" + id + "'").parents('li');
-      row.remove();
-    });
-  });
+ 
 
   $(document).on('submit', '#game-form form', function(e) {
     e.preventDefault();
